@@ -11,3 +11,7 @@ Run ng serve for a dev server. Navigate to http://127.0.0.1:8000/. The app will 
 
 ## Technologies used
 I used the terminal from ubuntu and This project was generated with Python version 3.6
+
+## Link to live site on Github Pages
+https://github.com/imalexianne/Gallery
+
