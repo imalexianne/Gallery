@@ -15,3 +15,5 @@ I used the terminal from ubuntu and This project was generated with Python versi
 ## Link to live site on Github Pages
 https://github.com/imalexianne/Gallery
 
+## Copyright and license information
+This project is licensed under the MIT License
