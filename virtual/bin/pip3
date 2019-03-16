@@ -1,4 +1,4 @@
-#!/home/wecode/Gallery/virtual/bin/python
+#!/home/alexianne/Gallery/virtual/bin/python
 # -*- coding: utf-8 -*-
 import re
 import sys
