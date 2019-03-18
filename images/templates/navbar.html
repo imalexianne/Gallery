@@ -4,7 +4,7 @@
         <a class="navbar-brand" >Cool photos</a>
       </div>
 
-      <!-- Adding a search form  -->
+      <!-- Adding a search by category form  -->
       <div class="col-sm-4 col-md-4 navbar-right">
 
         <form class="navbar-form" role="search" action="{% url 'search_results' %}">
@@ -18,6 +18,21 @@
 
         </form>
       </div>
-      <!-- search form end -->
+      <!-- search by category form end -->
+      <!-- Adding a search by location form  -->
+      <div class="col-sm-4 col-md-4 navbar-right">
+
+        <form class="navbar-form" role="search" action="{% url 'search_result' %}">
+
+          <div class="input-group">
+            <input class="form-control search-input" name="location" type="search" placeholder="Search locations" aria-label="Search">
+            <div class="input-group-btn">
+              <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
+            </div>
+          </div>
+
+        </form>
+      </div>
+      <!-- search by location form end -->
     </div>
   </nav>
