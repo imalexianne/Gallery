@@ -33,10 +33,19 @@ def image(request,image_id):
         raise Http404()
     return render(request,"images.html", {"image":image,'image_category':image_category, 'locations':locations})
 
-def location_filter(request, location):
-    locations = Location.objects.all()
-    images = Image.filter_by_location(location)
-    
+def search_result(request):
+    if 'location' in request.GET and request.GET["location"]:
+        search_term = request.GET.get("location")
+        searched_images = Image.search_img(search_term)
+        message = f"{search_term}"
+
+        return render(request, 'location.html',{"message":message,"images": searched_images})
+
+    else:
+        message = "You haven't searched for any term"
+        return render(request, 'location.html',{"message":message})
+
+
     return render(request, 'location.html', { 'images':images, 'locations':locations})
 
 
