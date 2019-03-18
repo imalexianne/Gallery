@@ -1,35 +1,27 @@
-{% extends 'base.html' %}
-
+{%extends 'base.html'%} 
 {% block content %}
+<div class="container">
 
-{% for images_item in images %}
-<div class="modal fade bd-example-modal-lg" id="{{images_item.id}}" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-lg modal-dialog-centered">
-            <div class="modal-content">
-                <div class="modal-body">
-                    <div class="row">
-                        <div class="col-md-12 modal-image">
-                            <a href="/image/{{images_item.category.image_category}}/{{images_item.id}}">
-                                <img src="{{images_item.image}}" alt="{{images_item.name}}">
-                            </a>
-                        </div>
-                        <div class="col-md-12 modal-text">
-                            <h5 class="modal-title" id="modal-title"> {{images_item.name}} </h5>
-                            <hr>
-                            <p>{{images_item.description}}</p>
-                            <ul class="list-inline">
-                                <li class="list-inline-item">
-                                    <a class="twitter-share-button" class="tooltip-test" title="Share on Twitter"
-                                        href="https://twitter.com/intent/tweet?text={{images_item.image}}" target="_blank">
-                                        <i class="fa fa-twitter fa-2x"></i>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+  <div class="row">
+    {% if images%}
+      <h2>Found {{ images|length }} of searched location {{message}}</h2>
+      <!-- <img src="{{image.image}}"  class="img-responsive" alt=""> -->
+    {% else %}
+      <h2> Found 0 images for the searched location {{message}}</h2>
+    {% endif %}
+
+  </div>
+
+  <div class="row">
+
+  {% if images %}
+    {% for image in images %}
+      <div class="col-sm-6 col-md-3">
+          <h1>{{image.name}}</h1>
+          <img src="{{image.image.url}}"  class="img-responsive" alt="">
+      </div>
+    {% endfor %}
+  {% endif %}
+  </div>
 </div>
-{% endfor %}
 {% endblock %}
