@@ -1,15 +1,20 @@
 {%extends 'base.html'%}
+{% load bootstrap3 %}
 {% block content %}
-<div class="container">
-<h1>WELLCOME TO THIS GALLERY!!</h1>
+ <div class="container"> 
+    <h1>WELLCOME TO THIS GALLERY!!</h1>
 
   {% if images %}
     {% for img in images %}
-      <div class="col-sm-6 col-md-3">
-          <h1>{{img.name}}</h1>
-          {% if img.image %}
-          <a data-toggle="modal" data-target="#{{img.id}}">
-          <img src="{{img.image.url}}" alt="image"></a><hr><hr>
+    <div>
+      <div class="col-xs-4"> 
+          <div class="row" >
+              <h1>{{img.name}}</h1>
+              {% if img.image %}
+              <a data-toggle="modal" data-target="#{{img.id}}">
+              <img src="{{img.image.url}}" alt="image" width='300' length='500' ></a>
+          </div> 
+      </div> 
 
           <div id="{{img.id}}" class="modal fade" role="dialog" >
             <div class="modal-dialog">
@@ -31,15 +36,14 @@
                 </div>
               </div>
           
-            </div>
-        </div> <br> <br>
+            </div> 
+        </div> <br>
           {% else %}
           <div>NO IMAGE</div>
           {% endif %}
-      </div>
+  </div>
     {% endfor %}
   {% endif %}
-  </div>
-</div>
+  
 {% endblock %}
 

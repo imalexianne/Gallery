@@ -15,14 +15,14 @@ class ImageTestClass(TestCase):
     
     # Testing Save Method
     def test_save_method(self):
-        self.james.save_editor()
-        editors = Editor.objects.all()
-        self.assertTrue(len(editors) > 0)
+        self.baby1.save_image()
+        images = Image.objects.all()
+        self.assertTrue(len(images) > 0)
 
     def test_delete_method(self):
-        self.james.save_editor()
-        editors = Editor.objects.all()
-        self.assertTrue(len(editors) > 0)
+        self.baby1.save_image()
+        images = Image.objects.all()
+        self.assertTrue(len(images) > 0)
 
     # def test_display_method(self):
     #     self.james.save_editor()
@@ -30,9 +30,9 @@ class ImageTestClass(TestCase):
     #     self.assertTrue(len(editors) > 0)
 
     def test_update_method(self):
-        self.james.save_editor()
-        editors = Editor.objects.all()
-        self.assertTrue(len(editors) > 0)
+        self.baby1.save_image()
+        images = Image.objects.all()
+        self.assertTrue(len(images) > 0)
 
     # def setUp(self):
     #     # Creating a new editor and saving it
@@ -49,18 +49,14 @@ class ImageTestClass(TestCase):
     #     self.new_article.tags.add(self.new_tag)
 
     def tearDown(self):
-        Editor.objects.all().delete()
-        tags.objects.all().delete()
-        Article.objects.all().delete()
+        Image.objects.all().delete()
+        category.objects.all().delete()
+        location.objects.all().delete()
 
 
     def test_get_image_by_id(id):
-       today_news = Article.todays_news()
-       self.assertTrue(len(today_news)>0)
+       image = Image.image()
+       self.assertTrue(len(image)>0)
 
-    def test_get_news_by_date(self):
-        test_date = '2017-03-17'
-        date = dt.datetime.strptime(test_date, '%Y-%m-%d').date()
-        news_by_date = Article.days_news(date)
-        self.assertTrue(len(news_by_date) == 0)
+    
 
